@@ -1,0 +1,153 @@
+!SESSION 2016-11-29 08:09:43.472 -----------------------------------------------
+eclipse.buildId=debbuild
+java.version=1.8.0_101
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=fr_FR
+Command-line arguments:  -os linux -ws gtk -arch x86_64
+
+!ENTRY org.eclipse.equinox.p2.operations 4 0 2016-11-29 08:11:57.105
+!MESSAGE Operation details
+!SUBENTRY 1 org.eclipse.equinox.p2.director 4 1 2016-11-29 08:11:57.105
+!MESSAGE Cannot complete the install because one or more required items could not be found.
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2016-11-29 08:11:57.105
+!MESSAGE Software being installed: e(fx)clipse - IDE 2.4.0.201605112122 (org.eclipse.fx.ide.feature.feature.group 2.4.0.201605112122)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2016-11-29 08:11:57.105
+!MESSAGE Missing requirement: Core (=none UI) components 2.4.0.201605111715 (org.eclipse.fx.core 2.4.0.201605111715) requires 'bundle com.google.guava 15.0.0' but it could not be found
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2016-11-29 08:11:57.105
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2016-11-29 08:11:57.105
+!MESSAGE From: e(fx)clipse - IDE - Basic 2.4.0.201605112122 (org.eclipse.fx.ide.basic.feature.feature.group 2.4.0.201605112122)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2016-11-29 08:11:57.105
+!MESSAGE To: org.eclipse.fx.core [2.4.0.201605111715]
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2016-11-29 08:11:57.105
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2016-11-29 08:11:57.105
+!MESSAGE From: e(fx)clipse - IDE 2.4.0.201605112122 (org.eclipse.fx.ide.feature.feature.group 2.4.0.201605112122)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2016-11-29 08:11:57.105
+!MESSAGE To: org.eclipse.fx.ide.basic.feature.feature.group [2.4.0.201605112122]
+
+!ENTRY org.eclipse.equinox.p2.operations 4 0 2016-11-29 08:11:57.111
+!MESSAGE Operation details
+!SUBENTRY 1 org.eclipse.equinox.p2.director 4 1 2016-11-29 08:11:57.111
+!MESSAGE Cannot complete the install because one or more required items could not be found.
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2016-11-29 08:11:57.111
+!MESSAGE Software being installed: e(fx)clipse - IDE 2.4.0.201605112122 (org.eclipse.fx.ide.feature.feature.group 2.4.0.201605112122)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2016-11-29 08:11:57.111
+!MESSAGE Missing requirement: Core (=none UI) components 2.4.0.201605111715 (org.eclipse.fx.core 2.4.0.201605111715) requires 'bundle com.google.guava 15.0.0' but it could not be found
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2016-11-29 08:11:57.111
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2016-11-29 08:11:57.111
+!MESSAGE From: e(fx)clipse - IDE - Basic 2.4.0.201605112122 (org.eclipse.fx.ide.basic.feature.feature.group 2.4.0.201605112122)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2016-11-29 08:11:57.111
+!MESSAGE To: org.eclipse.fx.core [2.4.0.201605111715]
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2016-11-29 08:11:57.111
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2016-11-29 08:11:57.111
+!MESSAGE From: e(fx)clipse - IDE 2.4.0.201605112122 (org.eclipse.fx.ide.feature.feature.group 2.4.0.201605112122)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2016-11-29 08:11:57.111
+!MESSAGE To: org.eclipse.fx.ide.basic.feature.feature.group [2.4.0.201605112122]
+
+!ENTRY org.eclipse.equinox.p2.operations 4 0 2016-11-29 08:12:10.268
+!MESSAGE Operation details
+!SUBENTRY 1 org.eclipse.equinox.p2.director 4 1 2016-11-29 08:12:10.268
+!MESSAGE Cannot complete the install because one or more required items could not be found.
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2016-11-29 08:12:10.268
+!MESSAGE Software being installed: e(fx)clipse - IDE - Basic 2.4.0.201605112122 (org.eclipse.fx.ide.basic.feature.feature.group 2.4.0.201605112122)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2016-11-29 08:12:10.268
+!MESSAGE Missing requirement: Core (=none UI) components 2.4.0.201605111715 (org.eclipse.fx.core 2.4.0.201605111715) requires 'bundle com.google.guava 15.0.0' but it could not be found
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2016-11-29 08:12:10.268
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2016-11-29 08:12:10.268
+!MESSAGE From: e(fx)clipse - IDE - Basic 2.4.0.201605112122 (org.eclipse.fx.ide.basic.feature.feature.group 2.4.0.201605112122)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2016-11-29 08:12:10.268
+!MESSAGE To: org.eclipse.fx.core [2.4.0.201605111715]
+
+!ENTRY org.eclipse.equinox.p2.operations 4 0 2016-11-29 08:12:10.274
+!MESSAGE Operation details
+!SUBENTRY 1 org.eclipse.equinox.p2.director 4 1 2016-11-29 08:12:10.274
+!MESSAGE Cannot complete the install because one or more required items could not be found.
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2016-11-29 08:12:10.274
+!MESSAGE Software being installed: e(fx)clipse - IDE - Basic 2.4.0.201605112122 (org.eclipse.fx.ide.basic.feature.feature.group 2.4.0.201605112122)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2016-11-29 08:12:10.274
+!MESSAGE Missing requirement: Core (=none UI) components 2.4.0.201605111715 (org.eclipse.fx.core 2.4.0.201605111715) requires 'bundle com.google.guava 15.0.0' but it could not be found
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2016-11-29 08:12:10.274
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2016-11-29 08:12:10.274
+!MESSAGE From: e(fx)clipse - IDE - Basic 2.4.0.201605112122 (org.eclipse.fx.ide.basic.feature.feature.group 2.4.0.201605112122)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2016-11-29 08:12:10.274
+!MESSAGE To: org.eclipse.fx.core [2.4.0.201605111715]
+!SESSION 2016-11-29 08:12:52.924 -----------------------------------------------
+eclipse.buildId=4.6.0.I20160606-1100
+java.version=1.8.0_101
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=fr_FR
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os linux -ws gtk -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.ui 1 1 2016-11-29 08:13:30.045
+!MESSAGE Workbench migration started
+
+!ENTRY org.eclipse.ui 1 1 2016-11-29 08:13:33.011
+!MESSAGE Workbench migration finished
+
+!ENTRY org.eclipse.core.jobs 4 2 2016-11-29 09:35:40.290
+!MESSAGE An internal error occurred during: "Computing size".
+!STACK 0
+java.lang.IllegalStateException: Profile epp.package.jee is not current. Expected timestamp 1480408538624 but was 1480403592282.
+	at org.eclipse.equinox.internal.p2.engine.SimpleProfileRegistry.lockProfile(SimpleProfileRegistry.java:854)
+	at org.eclipse.equinox.internal.p2.engine.Engine.perform(Engine.java:67)
+	at org.eclipse.equinox.internal.p2.engine.Engine.perform(Engine.java:44)
+	at org.eclipse.equinox.internal.p2.ui.ProvUI.getSize(ProvUI.java:250)
+	at org.eclipse.equinox.internal.p2.ui.dialogs.SizeComputingWizardPage$1.run(SizeComputingWizardPage.java:63)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+
+!ENTRY org.eclipse.epp.logging.aeri.ide 1 4 2016-11-29 09:35:40.605
+!MESSAGE Unknown problem status found in remote problems history: WONTFIX ; version: 2.0.1.v20160605-1811
+!STACK 0
+org.eclipse.epp.logging.aeri.core.util.Logs$LogTraceException
+	at org.eclipse.epp.logging.aeri.core.util.Logs$LogTraceException.newTrace(Logs.java:383)
+	at org.eclipse.epp.logging.aeri.core.util.Logs.log(Logs.java:134)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.ServerProblemsHistory.parseProblemStatus(ServerProblemsHistory.java:187)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.ServerProblemsHistory.loadStatus(ServerProblemsHistory.java:161)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.ServerProblemsHistory.seen(ServerProblemsHistory.java:140)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.ServerProblemsHistory.seen(ServerProblemsHistory.java:129)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.ServerConnection.interested(ServerConnection.java:143)
+	at org.eclipse.epp.internal.logging.aeri.ide.IDEWorkflow.getServerInterest(IDEWorkflow.java:262)
+	at org.eclipse.epp.internal.logging.aeri.ide.IDEWorkflow.doNewStatusLogged(IDEWorkflow.java:125)
+	at org.eclipse.epp.internal.logging.aeri.ide.IDEWorkflow.onNewStatusLogged(IDEWorkflow.java:106)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.eclipse.e4.core.internal.di.MethodRequestor.execute(MethodRequestor.java:54)
+	at org.eclipse.e4.core.di.internal.extensions.EventObjectSupplier$DIEventHandler.handleEvent(EventObjectSupplier.java:80)
+	at org.eclipse.equinox.internal.event.EventHandlerWrapper.handleEvent(EventHandlerWrapper.java:201)
+	at org.eclipse.equinox.internal.event.EventHandlerTracker.dispatchEvent(EventHandlerTracker.java:197)
+	at org.eclipse.equinox.internal.event.EventHandlerTracker.dispatchEvent(EventHandlerTracker.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+!SESSION 2016-11-29 09:35:48.189 -----------------------------------------------
+eclipse.buildId=4.6.0.I20160606-1100
+java.version=1.8.0_101
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=fr_FR
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -data file:/home/m2ivi/charneux/Documents/NIHM/TPReconnaissance/ -os linux -ws gtk -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.equinox.ds 1 0 2016-11-29 09:36:46.861
+!MESSAGE Could not bind a reference of component org.eclipse.fx.core.internal.JUtilLoggerFactory. The reference is: Reference[name = registerHandler, interface = java.util.logging.Handler, policy = dynamic, policy-option = greedy, cardinality = 0..n, target = null, bind = registerHandler, unbind = unregisterHandler, updated = null]
+
+!ENTRY org.eclipse.equinox.ds 1 0 2016-11-29 09:37:03.032
+!MESSAGE Could not bind a reference of component org.eclipse.fx.ide.css.cssext.ui.internal.DefaultCssExtProvider. The reference is: Reference[name = ICSSExtModelProvider, interface = org.eclipse.fx.ide.css.cssext.ICSSExtModelProvider, policy = dynamic, cardinality = 0..n, target = null, bind = bindCssExtensionModelProvider, unbind = unbindCssExtensionModelProvider]
+
+!ENTRY org.eclipse.jface.text 2 0 2016-11-29 09:48:00.634
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.number'
+
+!ENTRY org.eclipse.jface.text 2 0 2016-11-29 09:48:00.636
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.round'
+
+!ENTRY org.eclipse.jface.text 2 0 2016-11-29 09:48:00.696
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.number'
+
+!ENTRY org.eclipse.jface.text 2 0 2016-11-29 09:48:00.701
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.round'
