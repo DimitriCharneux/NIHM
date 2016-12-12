@@ -151,3 +151,30 @@ Command-line arguments:  -data file:/home/m2ivi/charneux/Documents/NIHM/TPReconn
 
 !ENTRY org.eclipse.jface.text 2 0 2016-11-29 09:48:00.701
 !MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.round'
+!SESSION 2016-12-06 08:16:21.255 -----------------------------------------------
+eclipse.buildId=debbuild
+java.version=1.8.0_101
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=fr_FR
+Command-line arguments:  -os linux -ws gtk -arch x86_64
+
+!ENTRY org.eclipse.team.core 4 0 2016-12-06 08:17:06.943
+!MESSAGE Could not instantiate provider org.eclipse.egit.core.GitProvider for project Reconnaissance.
+!STACK 1
+org.eclipse.team.core.TeamException: Could not instantiate provider org.eclipse.egit.core.GitProvider for project Reconnaissance.
+	at org.eclipse.team.core.RepositoryProvider.mapNewProvider(RepositoryProvider.java:165)
+	at org.eclipse.team.core.RepositoryProvider.mapExistingProvider(RepositoryProvider.java:235)
+	at org.eclipse.team.core.RepositoryProvider.getProvider(RepositoryProvider.java:507)
+	at org.eclipse.team.internal.core.TeamHookDispatcher.getProvider(TeamHookDispatcher.java:97)
+	at org.eclipse.team.internal.core.TeamHookDispatcher.getRuleFactory(TeamHookDispatcher.java:105)
+	at org.eclipse.core.internal.resources.Rules.factoryFor(Rules.java:93)
+	at org.eclipse.core.internal.resources.Rules.modifyRule(Rules.java:145)
+	at org.eclipse.core.internal.resources.Project.touch(Project.java:1401)
+	at org.eclipse.jdt.core.JavaCore$2.run(JavaCore.java:4018)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2344)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2326)
+	at org.eclipse.jdt.core.JavaCore.initializeAfterLoad(JavaCore.java:4028)
+	at org.eclipse.jdt.internal.ui.InitializeAfterLoadJob$RealJob.run(InitializeAfterLoadJob.java:36)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+!SUBENTRY 1 org.eclipse.team.core 4 0 2016-12-06 08:17:06.953
+!MESSAGE Could not instantiate provider org.eclipse.egit.core.GitProvider for project Reconnaissance.

@@ -1,0 +1,32 @@
+v = c(12,.4,5,2,50,8,3,1,4,.25)
+mean(v)
+v[2] = 7
+sum(v[v>10])
+quantile(v, c(0.90))
+data = read.table("data.txt", header=TRUE, sep=",")
+participant2SurfPad=subset(data,Participant==2 & Technique=="SurfPad")
+meanParticipant2SurfPad = mean(participant2SurfPad[,"Time"])
+techniques=unique(data$Technique)
+#res = sapply(techniques, tempsPourUneTechnique, data)
+#barplot (res, main="temps moyen par technique", names.arg=techniques, ylab="temps", xlab="technique")
+res = sapply(techniques, tempsPourUneTechniqueSansErreur, data)
+barplot (res, main="temps moyen par technique", names.arg=techniques, ylab="temps", xlab="technique")
+#intervalleConfiance(subset(data, Technique="SemPoint")[,"Time"])
+
+
+
+
+
+tempsPourUneTechnique = function(technique, dataFrame){
+	dataTechnique=subset(dataFrame,Technique==technique)
+	return(mean(dataTechnique[,"Time"]))
+}
+
+tempsPourUneTechniqueSansErreur = function(technique, dataFrame){
+	dataTechnique=subset(dataFrame,Technique==technique & Err == 0)
+	return(mean(dataTechnique[,"Time"]))
+}
+
+intervalleConfiance = function(v){
+	return(1.96 * (sd(v)/length(v)))
+}
