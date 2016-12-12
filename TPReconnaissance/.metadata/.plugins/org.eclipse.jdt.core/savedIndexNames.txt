@@ -1,2 +1,6 @@
+<<<<<<< HEAD
 INDEX VERSION 1.126+/home/m2ivi/charneux/Documents/NIHM/TPReconnaissance/.metadata/.plugins/org.eclipse.jdt.core
+=======
+INDEX VERSION 1.129+/home/dimitri/Documents/master/IVI/NIHM/TPReconnaissance/.metadata/.plugins/org.eclipse.jdt.core
+>>>>>>> 4d604c68999ac721fbe8b248da4fd600c4555524
 2587409910.index
