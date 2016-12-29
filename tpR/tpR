@@ -1,3 +1,18 @@
+tempsPourUneTechnique = function(technique, dataFrame){
+	dataTechnique=subset(dataFrame,Technique==technique)
+	return(mean(dataTechnique[,"Time"]))
+}
+
+tempsPourUneTechniqueSansErreur = function(technique, dataFrame){
+	dataTechnique=subset(dataFrame,Technique==technique & Err == 0)
+	return(mean(dataTechnique[,"Time"]))
+}
+
+intervalleConfiance = function(v){
+	return(1.96 * (sd(v)/length(v)))
+}
+
+
 v = c(12,.4,5,2,50,8,3,1,4,.25)
 mean(v)
 v[2] = 7
@@ -17,16 +32,4 @@ barplot (res, main="temps moyen par technique", names.arg=techniques, ylab="temp
 
 
 
-tempsPourUneTechnique = function(technique, dataFrame){
-	dataTechnique=subset(dataFrame,Technique==technique)
-	return(mean(dataTechnique[,"Time"]))
-}
 
-tempsPourUneTechniqueSansErreur = function(technique, dataFrame){
-	dataTechnique=subset(dataFrame,Technique==technique & Err == 0)
-	return(mean(dataTechnique[,"Time"]))
-}
-
-intervalleConfiance = function(v){
-	return(1.96 * (sd(v)/length(v)))
-}

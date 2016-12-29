@@ -210,8 +210,15 @@ public class HMM {
 	 */
 
 	public ArrayList<Double> computeFeatures(Vector<Point2D> points) {
-
-		return null;
+		ArrayList<Double> res = new ArrayList<Double>();
+		
+		for(int i=1; i<points.size(); i++){
+			double angle = Math.abs(Math.atan2(points.get(i).getY() - points.get(i-1).getY(),
+					points.get(i).getX() - points.get(i-1).getX()));
+			res.add(Math.toDegrees(angle)/10);
+		}
+		
+		return res;
 	}
 
 	/**
@@ -263,31 +270,37 @@ public class HMM {
 	 * @return
 	 */
 
+	
 	protected Vector<Point2D> resample(Vector<PointData> pts, int deltaTms) {
 		Vector<Point2D> res = new Vector<Point2D>();
-		int cpt = 0;
+		int cpt = 1;
 		long endTime = pts.get(pts.size() - 1).getTimeStamp();
 		res.add(pts.get(0).getPoint());
-
 		for (long cptTime = pts.get(0).getTimeStamp() + deltaTms; cptTime < endTime - deltaTms; cptTime += deltaTms) {
-			while (cptTime <= pts.get(cpt).getTimeStamp()) {
+			while (cpt < pts.size()-1 && cptTime > pts.get(cpt).getTimeStamp()) {
+				//System.out.println("boucle x : " + pts.get(cpt).getX() + ", y : " + pts.get(cpt).getY()); 
+				//System.out.println("boucle time : " + cptTime + " cpt : " + pts.get(cpt).getTimeStamp());
 				cpt++;
 			}
-
 			res.add(interpole(pts.get(cpt-1), pts.get(cpt), cptTime));
 
 		}
 		res.add(pts.get(pts.size() - 1).getPoint());
 		return res;
 	}
-
-	private Point2D interpole(PointData pointData, PointData pointData2, long cptTime) {
+	
+	private Point2D interpole(PointData precedent, PointData courant, long cptTime) {
 		double x, y;
-		long ecart = pointData2.getTimeStamp() - pointData.getTimeStamp();
-		long valeurTime = cptTime - pointData.getTimeStamp();
-		long pourcent1 = (valeurTime / ecart);
-		x = (1 - pourcent1) * pointData.getX() + pourcent1 * pointData2.getX();
-		y = (1 - pourcent1) * pointData.getY() + pourcent1 * pointData2.getY();
+		//System.out.println("1 : " + precedent.getTimeStamp() + " 2 : " + cptTime + " 3 : " + courant.getTimeStamp() );
+		long ecart = courant.getTimeStamp() - precedent.getTimeStamp();
+		long valeurTime = cptTime - precedent.getTimeStamp();
+		double pourcent1 = ((double)valeurTime / ecart);
+		//System.out.println("a : " + ecart + " b : " + valeurTime + " c : " + pourcent1 );
+		x = (1 - pourcent1) * precedent.getX() + pourcent1 * courant.getX();
+		y = (1 - pourcent1) * precedent.getY() + pourcent1 * courant.getY();
+		//System.out.println("precedant x : " + precedent.getX() + ", y : " + precedent.getY()); 
+		//System.out.println("courant x : " + courant.getX() + ", y : " + courant.getY()); 
+		//System.out.println("interpole x : " + x + ", y : " + y); 
 		return new Point2D(x, y);
 	}
 
