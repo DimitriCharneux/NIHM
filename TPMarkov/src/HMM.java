@@ -37,14 +37,14 @@ public class HMM {
 	Vector<GestureProbability> gesturesProbabilities;
 
 	int cpt = 0;
-	int resamplingPeriod = 20;
+	int resamplingPeriod = 10;
 
 	HMM() {
 		gestureClasses = new Vector<String>();
 		classMap = new HashMap<String, GestureClass>();
 		templateManager = new TemplateManager("ressources/gestures.xml");
 		gesturesProbabilities = new Vector<GestureProbability>();
-		// Training();
+		Training();
 	}
 
 	/**
@@ -212,10 +212,14 @@ public class HMM {
 	public ArrayList<Double> computeFeatures(Vector<Point2D> points) {
 		ArrayList<Double> res = new ArrayList<Double>();
 		
-		for(int i=1; i<points.size(); i++){
-			double angle = Math.abs(Math.atan2(points.get(i).getY() - points.get(i-1).getY(),
-					points.get(i).getX() - points.get(i-1).getX()));
-			res.add(Math.toDegrees(angle)/10);
+		for(int i = 1; i < points.size(); i++) {;
+			
+			Point2D droite = points.get(i).subtract(points.get(i - 1));
+			Point2D base = new Point2D(1,0);
+			
+			double theta = droite.angle(base);
+			
+			res.add(Math.abs(theta) /10);
 		}
 		
 		return res;
