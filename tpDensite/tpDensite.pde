@@ -6,8 +6,8 @@ int totalCount; // total number of places
 int minPopulation, maxPopulation;
 int minSurface, maxSurface;
 int minAltitude, maxAltitude; 
-int minPopulationToDisplay = 10000;
-float multiplicateur = 1.2;
+int minDensiteToDisplay = 100;
+float multiplicateur = 0.2;
 City lastPrintedName;
 
 // and the tables in which the city coordinates will be stored 
@@ -22,25 +22,23 @@ void draw(){
   clear();
   if(keyPressed){
     if(key == '+')
-      if(minPopulationToDisplay == 0)
-        minPopulationToDisplay = 1000;
-      else
-        minPopulationToDisplay *= multiplicateur;
+        minDensiteToDisplay += minDensiteToDisplay * multiplicateur;
     if(key == '-')
-      minPopulationToDisplay /= multiplicateur;
+      if((int)(minDensiteToDisplay - minDensiteToDisplay * multiplicateur) >10)
+        minDensiteToDisplay -= minDensiteToDisplay * multiplicateur;
   }
   
   
   background(255);
   for (int i = 0 ; i < totalCount ; i++)
-    if(cities[i] != null && cities[i].population > minPopulationToDisplay)
+    if(cities[i] != null && cities[i].densite > minDensiteToDisplay)
       cities[i].draw();
   if(lastPrintedName != null){
     lastPrintedName.afficheNom();
   }
   textSize(32);
   fill(0,0,0);
-  text("Afficher les populations supérieures à " + minPopulationToDisplay, 20, 750);
+  text("Afficher les populations supérieures à " + minDensiteToDisplay, 20, 750);
 }
 
 
@@ -78,10 +76,10 @@ void readData() {
     cities[i-2].x = float (columns[1]);
     cities[i-2].y = float (columns[2]);
     cities[i-2].population = float (columns[5]);
-    cities[i-2].density = float (columns[5]) / float(columns[6]);
     cities[i-2].surface = float (columns[6]);
     cities[i-2].altitude = float (columns[7]);
     cities[i-2].name = (columns[4]);
+    cities[i-2].densite = cities[i-2].population / cities[i-2].surface;
   }
 }
 
@@ -103,7 +101,7 @@ void parseInfo(String line) {
 
 City pick(int px, int py){
   for(int i = cities.length -1; i>=0; i-- ){
-    if(cities[i]!=null && cities[i].population > minPopulationToDisplay && cities[i].contains(px,py)){
+    if(cities[i]!=null && cities[i].densite > minDensiteToDisplay && cities[i].contains(px,py)){
       return cities[i];
     }
   }

@@ -4,42 +4,23 @@ class City {
   float x; 
   float y; 
   float population;
-  float density;
   float surface;
   float altitude;
-  int diametre;
+  float densite;
+  int diametre = 3;
   boolean isSelected = false;
 
   void draw(){
-    /* population*/
-    /*int pop = (int)((population / maxPopulation) * 200);
-    ellipse((int) mapX(this.x), (int) mapY(this.y), pop,pop);*/
-    
-    
-    /* densité*/
-    if(isSelected)
-      fill(255,0,0);
-    else
-      fill(255,255,255);
-    diametre = (int)(this.density/100);
-    ellipse((int) mapX(this.x), (int) mapY(this.y), diametre,diametre);
-    
-    afficheNom();
-    /* densite 2 */
-    /*noStroke();
-    fill( 255 - ((this.population/maxPopulation) *255),
-    255 - ((this.population/maxPopulation) *255),
-    255 - ((this.population/maxPopulation) *255));
-    ellipse((int) mapX(this.x), (int) mapY(this.y), 
-    (this.population/maxPopulation) * 100,(this.population/maxPopulation) * 100);*/
+
+
     
     
     /* altitude */
-    /*noStroke();
+    noStroke();
     int valeur =(int) (255 - (this.altitude/maxAltitude) *255);
     fill(valeur,valeur,valeur);
-    int taille = 2+(int)((this.altitude/maxAltitude) * 20);
-    ellipse((int) mapX(this.x), (int) mapY(this.y), taille, taille);*/
+    diametre = 2+(int)((this.altitude/maxAltitude) * 20);
+    ellipse((int) mapX(this.x), (int) mapY(this.y), diametre, diametre);
   }
   
   void afficheNom(){
