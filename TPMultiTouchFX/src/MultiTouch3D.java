@@ -39,6 +39,7 @@ public class MultiTouch3D extends Application{
 	boolean firstPointIsInObject = false;
 	PickResult res;
 	String debugInfo = "";
+	Point2D cubePoint;
 
 	public void start(Stage stage) {
         if (!Platform.isSupported(ConditionalFeature.SCENE3D)) {
@@ -91,10 +92,11 @@ public class MultiTouch3D extends Application{
 		scene.setOnMousePressed(e -> {
 			if (!touchscreen) {
 				Point2D p = new Point2D(e.getX(), e.getY());
-				if (e.isSecondaryButtonDown()) 
+				if (e.isSecondaryButtonDown()) {
 					bqueue.remove(p);
-				else
+				} else {
 		    		bqueue.add(p);
+				}
 			}
     		
             res = e.getPickResult();		
@@ -130,6 +132,7 @@ public class MultiTouch3D extends Application{
         
 		scene.setOnMouseReleased(e -> {
     		System.out.println("j'ai fini de bouger");
+    		firstPointIsInObject = false;
         });
 		
 		scene.setOnTouchPressed(e -> {
