@@ -40,7 +40,6 @@ public class MultiTouch3D extends Application{
 	PickResult res;
 	String debugInfo = "";
 	Point2D cubePoint;
-	Point2D ancienP1;
 
 	public void start(Stage stage) {
         if (!Platform.isSupported(ConditionalFeature.SCENE3D)) {
@@ -91,9 +90,8 @@ public class MultiTouch3D extends Application{
 		scene.setCamera(camera);
             		
 		scene.setOnMousePressed(e -> {
-			Point2D p = null;
 			if (!touchscreen) {
-				p = new Point2D(e.getX(), e.getY());
+				Point2D p = new Point2D(e.getX(), e.getY());
 				if (e.isSecondaryButtonDown()) {
 					bqueue.remove(p);
 				} else {
@@ -108,9 +106,8 @@ public class MultiTouch3D extends Application{
             	firstPointIsInObject = true;
             } else {
             	firstPointIsInObject = false;
+
             }
-            if (bqueue.getPoint(1) == p)
-            	ancienP1 = bqueue.getPoint(1);
             
             e.consume(); 
             redrawMyCanvas();
@@ -132,16 +129,12 @@ public class MultiTouch3D extends Application{
 			}
             if (bqueue.getPoint(1) == p && firstPointIsInObject) {
 				Quaternion q = new Quaternion(box.getRotationAxis(), Math.toRadians(box.getRotate()));
-				Point2D diff = new Point2D(p.getX() - ancienP1.getX(), p.getY() - ancienP1.getY());
-				
-				double a = Math.atan(diff.magnitude() / (box.getWidth() / 2));
-				
-				Quaternion q2 = new Quaternion(new Point3D(-diff.getY(), diff.getX(), 0),-a);
-				
+				Quaternion q2 = new Quaternion(new Point3D(-bqueue.getPoint(1).getY(), bqueue.getPoint(1).getX(), 0),
+						30);
+				//TODO a faire
 				Quaternion res = q2.multiply(q);
 				box.setRotationAxis(res.getAxis());
 				box.setRotate(Math.toDegrees(res.getAngle()));
-				ancienP1 = bqueue.getPoint(1);
 			}
 			redrawMyCanvas();
         });
@@ -149,7 +142,6 @@ public class MultiTouch3D extends Application{
 		scene.setOnMouseReleased(e -> {
     		System.out.println("j'ai fini de bouger");
     		firstPointIsInObject = false;
-    		ancienP1 = null;
         });
 		
 		scene.setOnTouchPressed(e -> {

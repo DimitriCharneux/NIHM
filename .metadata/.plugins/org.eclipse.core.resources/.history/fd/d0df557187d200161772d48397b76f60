@@ -282,6 +282,8 @@ public class HMM {
 		res.add(pts.get(0).getPoint());
 		for (long cptTime = pts.get(0).getTimeStamp() + deltaTms; cptTime < endTime - deltaTms; cptTime += deltaTms) {
 			while (cpt < pts.size()-1 && cptTime > pts.get(cpt).getTimeStamp()) {
+				//System.out.println("boucle x : " + pts.get(cpt).getX() + ", y : " + pts.get(cpt).getY()); 
+				//System.out.println("boucle time : " + cptTime + " cpt : " + pts.get(cpt).getTimeStamp());
 				cpt++;
 			}
 			res.add(interpole(pts.get(cpt-1), pts.get(cpt), cptTime));
@@ -293,11 +295,16 @@ public class HMM {
 	
 	private Point2D interpole(PointData precedent, PointData courant, long cptTime) {
 		double x, y;
+		//System.out.println("1 : " + precedent.getTimeStamp() + " 2 : " + cptTime + " 3 : " + courant.getTimeStamp() );
 		long ecart = courant.getTimeStamp() - precedent.getTimeStamp();
 		long valeurTime = cptTime - precedent.getTimeStamp();
 		double pourcent1 = ((double)valeurTime / ecart);
+		//System.out.println("a : " + ecart + " b : " + valeurTime + " c : " + pourcent1 );
 		x = (1 - pourcent1) * precedent.getX() + pourcent1 * courant.getX();
 		y = (1 - pourcent1) * precedent.getY() + pourcent1 * courant.getY();
+		//System.out.println("precedant x : " + precedent.getX() + ", y : " + precedent.getY()); 
+		//System.out.println("courant x : " + courant.getX() + ", y : " + courant.getY()); 
+		//System.out.println("interpole x : " + x + ", y : " + y); 
 		return new Point2D(x, y);
 	}
 

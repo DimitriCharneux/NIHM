@@ -131,6 +131,10 @@ public class MultiTouch3D extends Application{
 				box.setTranslateZ(bqueue.getPoint(1).getY());
 			}
             if (bqueue.getPoint(1) == p && firstPointIsInObject) {
+            	if(ancienP1 == null){
+            		ancienP1 = bqueue.getPoint(1);
+            	}
+            	
 				Quaternion q = new Quaternion(box.getRotationAxis(), Math.toRadians(box.getRotate()));
 				Point2D diff = new Point2D(p.getX() - ancienP1.getX(), p.getY() - ancienP1.getY());
 				
