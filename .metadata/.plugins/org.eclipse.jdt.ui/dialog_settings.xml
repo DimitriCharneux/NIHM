@@ -2,10 +2,10 @@
 <section name="Workbench">
 	<section name="FatJarPackageWizard">
 		<item value="/home/dimitri/Documents/master/IVI/NIHM" key="FatJarPackageWizardPage.ANTSCRIPT_LOCATION"/>
-		<item value="MultiTouch3D - TPMultiTouchFX" key="FatJarPackageWizardPage.LAUNCH_CONFIGURATION_SELECTION_NAME"/>
+		<item value="Markov - TPMarkov" key="FatJarPackageWizardPage.LAUNCH_CONFIGURATION_SELECTION_NAME"/>
 		<item value="markov_charneux.jar" key="FatJarPackageWizardPage.DESTINATION_PATH_SELECTION"/>
 		<item value="false" key="FatJarPackageWizardPage.ANTSCRIPT_SAVE"/>
-		<item value="3" key="FatJarPackageWizardPage.LIBRARY_HANDLING"/>
+		<item value="1" key="FatJarPackageWizardPage.LIBRARY_HANDLING"/>
 		<list key="FatJarPackageWizardPage.DESTINATION_NAMES_ID">
 			<item value="markov_charneux.jar"/>
 			<item value="multitouch_charneux.jar"/>
@@ -24,6 +24,8 @@
 	</section>
 	<section name="ClasspathContainerSelectionPage">
 		<item value="1" key="index"/>
+	</section>
+	<section name="OptionalMessageDialog.hide.">
 	</section>
 	<section name="quick_assist_proposal_size">
 	</section>
