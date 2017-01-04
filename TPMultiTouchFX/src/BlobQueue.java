@@ -12,7 +12,11 @@ import javafx.geometry.Point2D;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 
-
+/**
+ * 
+ * @author Dimitri Charneux
+ *
+ */
 public class BlobQueue {
 	int size = 30;
 	HashMap<Integer, Point2D> cursors;

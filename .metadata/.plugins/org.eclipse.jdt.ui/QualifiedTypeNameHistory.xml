@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="javafx.geometry.Point2D"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="be.ac.ulg.montefiore.run.jahmm.ForwardBackwardCalculator"/>
+<fullyQualifiedTypeName name="Quaternion"/>
+<fullyQualifiedTypeName name="javafx.geometry.Point3D"/>
+<fullyQualifiedTypeName name="java.lang.Math"/>
+<fullyQualifiedTypeName name="javafx.geometry.Point2D"/>
 </qualifiedTypeNameHistroy>

@@ -24,6 +24,11 @@ import javafx.scene.shape.Box;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 
+/**
+ * 
+ * @author Dimitri Charneux
+ *
+ */
 public class MultiTouch3D extends Application{
 	BlobQueue bqueue;
 	

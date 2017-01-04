@@ -7,6 +7,11 @@
 
 import javafx.geometry.Point3D;
 
+/**
+ * 
+ * @author Dimitri Charneux
+ *
+ */
 public class Quaternion {
 	private double x, y, z, w;
 

@@ -1,0 +1,26 @@
+Tp réalisé par Dimitri Charneux
+
+Le TP a été réalisé entièrement même si je ne suis pas sûr de ma méthode concernant la question 7
+
+La reconnaissance avec Markov est difficile avec certain geste comme les mots.
+
+
+Q3 :
+	On a un angle arrondi, on perd donc de l'information, un angle de 0 ou 9  degré sera considérer comme le même angle.
+
+
+Q4 :
+	La méthode computeKmeansLearner transforme les données d'exemple en données ObservationInteger pour pouvoir les utiliser en apprentissage. Elle appelle ensuite la méthode trainHMM.
+	La méthode trainHMM fournie les données transformées à un algorithme d'apprentissage pour pouvoir ensuite détecter les gestes.
+	
+Q7 : 
+	Pour la seconde solution, j'ai ajouter un traitement dans la fonction recognize d'HMM pour comparer la distance du premier et du dernier points.
+	Cette solution n'améliore pas significativement les résultats. Pour des gestes comme le cercle ou le carré où le premier et le dernier points sont très poche, il faut éloigner le points quand on le dessine sinon le geste n'est pas reconnu.
+	
+	
+Q8 : 
+	Avec un resamplingPeriod à 200, le carré est reconnu 9 fois sur 10, le cercle 9 fois sur 10.
+	Avec un resamplingPeriod à 40, le carré est reconnu 10 fois sur 10, le cercle 6 fois sur 10.
+	Avec un resamplingPeriod à 250, les forme ont du mal a être reconnu, pas plus de 2 sur 10 pour le cercle et 3 pour le carré.
+	Le resamplingPeriod n'a pas l'air de beaucoup influer sur la reconnaissance à moins de lui donner des valeurs très grandes. 
+
