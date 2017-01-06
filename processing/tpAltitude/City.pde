@@ -7,7 +7,7 @@ class City {
   float surface;
   float altitude;
   float densite;
-  int diametre = 3;
+  int diametre = 5;
   boolean isSelected = false;
 
   void draw(){
@@ -17,9 +17,26 @@ class City {
     
     /* altitude */
     noStroke();
-    int valeur =(int) (255 - (this.altitude/maxAltitude) *255);
-    fill(valeur,valeur,valeur);
-    diametre = 2+(int)((this.altitude/maxAltitude) * 20);
+    float valeur =this.altitude/maxAltitude;
+    
+    if(valeur < 0.125){
+      fill(255,255,229);
+    }else if(valeur < 0.250){
+      fill(255,247,188);  
+    }else if(valeur < 0.375){
+      fill(254,227,145);    
+    }else if(valeur < 0.500){
+      fill(254,196,79);
+    }else if(valeur < 0.625){
+      fill(254,153,41);
+    }else if(valeur < 0.750){
+      fill(236,112,20);
+    }else if(valeur < 0.975){
+      fill(204,76,2);
+    }else{
+      fill(140,45,4);
+    }
+
     ellipse((int) mapX(this.x), (int) mapY(this.y), diametre, diametre);
   }
   

@@ -7,27 +7,57 @@ int minPopulation, maxPopulation;
 int minSurface, maxSurface;
 int minAltitude, maxAltitude; 
 int minDensiteToDisplay = 100;
-float multiplicateur = 0.2;
 City lastPrintedName;
 
 // and the tables in which the city coordinates will be stored 
 City cities[];
 
 void setup() {
-  size(800,800); 
+  size(1200,800); 
   readData();
 }
 
 void draw(){
   clear();
   if(keyPressed){
-    if(key == '+')
-        minDensiteToDisplay += minDensiteToDisplay * multiplicateur;
-    if(key == '-')
-      if((int)(minDensiteToDisplay - minDensiteToDisplay * multiplicateur) >10)
-        minDensiteToDisplay -= minDensiteToDisplay * multiplicateur;
-  }
-  
+    if(key == '+'){
+      println("plus");
+      if(minDensiteToDisplay == 0)
+        minDensiteToDisplay = 5;
+      else if(minDensiteToDisplay <50)
+        minDensiteToDisplay += 10;
+      else if(minDensiteToDisplay <200)
+        minDensiteToDisplay += 50;
+      else if(minDensiteToDisplay <500)
+        minDensiteToDisplay += 100;
+      else if(minDensiteToDisplay <2000)
+        minDensiteToDisplay += 500;
+      if(minDensiteToDisplay <5000)
+        minDensiteToDisplay += 1000;
+      else if(minDensiteToDisplay <15000)
+        minDensiteToDisplay += 3000;
+      else
+        minDensiteToDisplay += 5000;  
+    } else if(key == '-'){
+      println("moins");
+      if(minDensiteToDisplay <= 0)
+         minDensiteToDisplay = 0;
+      else if(minDensiteToDisplay <50)
+        minDensiteToDisplay -= 10;
+      else if(minDensiteToDisplay <200)
+        minDensiteToDisplay -= 50;
+      else if(minDensiteToDisplay <500)
+        minDensiteToDisplay -= 100;
+      else if(minDensiteToDisplay <2000)
+        minDensiteToDisplay -= 500;
+      else if(minDensiteToDisplay <5000)
+        minDensiteToDisplay -= 1000;
+      else if(minDensiteToDisplay <15000)
+        minDensiteToDisplay -= 3000;
+      else
+        minDensiteToDisplay -= 5000; 
+    }
+  }  
   
   background(255);
   for (int i = 0 ; i < totalCount ; i++)
@@ -36,9 +66,15 @@ void draw(){
   if(lastPrintedName != null){
     lastPrintedName.afficheNom();
   }
-  textSize(32);
+  
+  //Affichage de la légende
+  stroke(0,0,0);
+  noFill();
+  rect(825,25,350,750,1);
+  
+  textSize(14);
   fill(0,0,0);
-  text("Afficher les populations supérieures à " + minDensiteToDisplay, 20, 750);
+  text("Afficher les populations supérieures à " + minDensiteToDisplay, 830, 75);
 }
 
 
