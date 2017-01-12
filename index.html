@@ -5,19 +5,51 @@
     <head>
 
         <meta charset="utf-8" />
-
+		<style>
+		
+			#main{
+				width:900px;
+				min-height:100%;
+				margin-left:100px;
+				margin-right:100px;
+			}
+			
+			p{
+				text-align:justify;
+			}
+			
+			footer{
+				background:#ccc;
+				bottom:0;
+				height:50px;
+				width:900px;
+				text-align:justify;
+			}
+			
+			
+		</style>
         <title>TP Processing Dimitri Charneux</title>
 
     </head>
 
 
     <body>
+    	<div id="main">
+			<h1>NIHM - TP carte de France avec Processing</h1>
+		    <p>Ce Tp a été réalisé par Dimitri Charneux</p>
 
-        <p>Ce Tp a été réalisé par Dimitri Charneux</p>
+		   	<p>Pour ce TP, J'ai décidé d'utiliser la densité de population, ainsi que le nombre d'habitant des villes. Je me suis inspiré de la carte disponible <a href="http://www.cartesfrance.fr/geographie/cartes-population/carte-densite-population-2009.html">ici</a>. Les villes sont représenté par des cercles de tailles et de couleurs différentes.</p>
 
-       
-
-        <p>J'ai utilisé le site <a href="http://colorbrewer2.org/">suivant</a>, indiqué dans l'énoncé du TP, pour trouver des palettes de couleurs efficaces.</p> 
+		    <p>J'ai utilisé le site <a href="http://colorbrewer2.org/">suivant</a>, indiqué dans l'énoncé du TP, pour trouver des palettes de couleurs efficaces. J'ai choisi de faire varier la couleur du jaune pour les plus faibles densités de population, au rouge pour les plus fortes.</p> 
+		    <p>La taille des cercles est proportionnelle au nombres d'habitants d'une ville. La taille minimale d'une ville est de 3 pixels afin de pouvoir voir les villes ayant le plus faibles nombres d'habitants. Ensuite, elle augmente proportionnellement au nombre d'habitant de ces villes, allant au maximum jusque 103 pixels.</p>
+		    <p>Nous obtenons ainsi la carte de France suivante : </p>
+		    
+		    <img src="imageProcessing/carte1.png" alt="carte des densités de population">
+		    
+		    <footer>
+				<p>Ce Tp a été réalisé par Dimitri Charneux</p>
+			</footer>
+    	</div>
 
     </body>
 

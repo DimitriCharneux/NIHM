@@ -8,73 +8,59 @@ int minSurface, maxSurface;
 int minAltitude, maxAltitude; 
 int minDensiteToDisplay = 100;
 City lastPrintedName;
+City selectedCity = null;
+
+HScrollbar bar;
 
 // and the tables in which the city coordinates will be stored 
 City cities[];
 
 void setup() {
-  size(1200,800); 
+  size(1200,700); 
+  bar = new HScrollbar(850, 75, 300, 16, 1);
+  
   readData();
 }
 
 void draw(){
   clear();
-  if(keyPressed){
-    if(key == '+'){
-      println("plus");
-      if(minDensiteToDisplay == 0)
-        minDensiteToDisplay = 5;
-      else if(minDensiteToDisplay <50)
-        minDensiteToDisplay += 10;
-      else if(minDensiteToDisplay <200)
-        minDensiteToDisplay += 50;
-      else if(minDensiteToDisplay <500)
-        minDensiteToDisplay += 100;
-      else if(minDensiteToDisplay <2000)
-        minDensiteToDisplay += 500;
-      if(minDensiteToDisplay <5000)
-        minDensiteToDisplay += 1000;
-      else if(minDensiteToDisplay <15000)
-        minDensiteToDisplay += 3000;
-      else
-        minDensiteToDisplay += 5000;  
-    } else if(key == '-'){
-      println("moins");
-      if(minDensiteToDisplay <= 0)
-         minDensiteToDisplay = 0;
-      else if(minDensiteToDisplay <50)
-        minDensiteToDisplay -= 10;
-      else if(minDensiteToDisplay <200)
-        minDensiteToDisplay -= 50;
-      else if(minDensiteToDisplay <500)
-        minDensiteToDisplay -= 100;
-      else if(minDensiteToDisplay <2000)
-        minDensiteToDisplay -= 500;
-      else if(minDensiteToDisplay <5000)
-        minDensiteToDisplay -= 1000;
-      else if(minDensiteToDisplay <15000)
-        minDensiteToDisplay -= 3000;
-      else
-        minDensiteToDisplay -= 5000; 
-    }
-  }  
-  
   background(255);
   for (int i = 0 ; i < totalCount ; i++)
-    if(cities[i] != null && cities[i].densite > minDensiteToDisplay)
+    if(cities[i] != null && cities[i].population > minDensiteToDisplay)
       cities[i].draw();
   if(lastPrintedName != null){
     lastPrintedName.afficheNom();
   }
   
+  
+  //Affichage de la ville selectionné
+  textSize(14);
+  fill(0,0,0);
+  if(selectedCity != null){
+    text("Ville selectionné : " + selectedCity.name, 840, 125);
+    text("Population : " + selectedCity.population + " habitants", 850, 150);
+    text("Densité : " + selectedCity.densite + " habitants/km^2", 850, 175);
+    text("Surface : " + selectedCity.surface + " km^2", 850, 200);
+    text("Altitude : " + selectedCity.altitude + " m", 850, 225);
+  } else {
+    text("Pas de ville selectionné ", 840, 125);
+  }
+  
+  //scrollbar
+  bar.update();
+  bar.display();
+  println(bar.getPos());
+  minDensiteToDisplay = (int)(bar.getPos() * 100000);
+  
+  
   //Affichage de la légende
   stroke(0,0,0);
   noFill();
-  rect(825,25,350,750,1);
+  rect(825,25,350,275,1);
   
   textSize(14);
   fill(0,0,0);
-  text("Afficher les populations supérieures à " + minDensiteToDisplay, 830, 75);
+  text("Afficher les populations supérieures à " + minDensiteToDisplay, 840, 50);
 }
 
 
@@ -97,6 +83,15 @@ void mouseMoved() {
       lastPrintedName.isSelected = false;
       lastPrintedName = null;
     }
+  }
+}
+
+void mouseClicked() {
+  City tmp = pick(mouseX,mouseY);
+  if(tmp != null){
+    selectedCity = tmp;
+  } else {
+    selectedCity = null;
   }
 }
 
@@ -137,7 +132,7 @@ void parseInfo(String line) {
 
 City pick(int px, int py){
   for(int i = cities.length -1; i>=0; i-- ){
-    if(cities[i]!=null && cities[i].densite > minDensiteToDisplay && cities[i].contains(px,py)){
+    if(cities[i]!=null && cities[i].population > minDensiteToDisplay && cities[i].contains(px,py)){
       return cities[i];
     }
   }
@@ -145,9 +140,9 @@ City pick(int px, int py){
 }
 
 float mapX(float x) {
-  return map(x, minX, maxX, 0, 800);
+  return map(x, minX, maxX, 0, 700);
 }
 
 float mapY(float y) {
-  return map(y, maxY, minY, 0, 800);
+  return map(y, maxY, minY, 0, 700);
 }
