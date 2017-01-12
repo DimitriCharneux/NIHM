@@ -9,6 +9,7 @@ class City {
   float densite;
   int diametre = 3;
   boolean isSelected = false;
+  boolean isClicked = false;
   boolean firstDraw = true;
   float R=0,G=0,B=0;
   void draw(){
@@ -77,7 +78,10 @@ class City {
       diametre = (int)(3 + (population / maxPopulation) * 100);
       firstDraw = false;
     }
-    fill(R,G,B);
+    if(!isClicked)
+      fill(R,G,B);
+    else
+      fill(0,255,128);
     ellipse((int) mapX(this.x), (int) mapY(this.y), diametre,diametre);
     
   }
@@ -87,8 +91,10 @@ class City {
       textSize(12);
       textAlign(LEFT, TOP);
       fill(255,255,255);
+      stroke(0,0,0);
       rect((int) mapX(this.x) + diametre/2 - 2, (int) mapY(this.y)-10, textWidth(name) +4 , 20);
       fill(0,0,0);
+      noStroke();
       text(name, (int) mapX(this.x) + diametre/2, (int) mapY(this.y)-7);
     }
   }

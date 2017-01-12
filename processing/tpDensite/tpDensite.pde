@@ -37,13 +37,13 @@ void draw(){
   textSize(14);
   fill(0,0,0);
   if(selectedCity != null){
-    text("Ville selectionné : " + selectedCity.name, 840, 125);
+    text("Ville selectionnée : " + selectedCity.name, 840, 125);
     text("Population : " + selectedCity.population + " habitants", 850, 150);
     text("Densité : " + selectedCity.densite + " habitants/km^2", 850, 175);
     text("Surface : " + selectedCity.surface + " km^2", 850, 200);
     text("Altitude : " + selectedCity.altitude + " m", 850, 225);
   } else {
-    text("Pas de ville selectionné ", 840, 125);
+    text("Pas de ville selectionnée ", 840, 125);
   }
   
   //scrollbar
@@ -60,7 +60,7 @@ void draw(){
   
   textSize(14);
   fill(0,0,0);
-  text("Afficher les populations supérieures à " + minDensiteToDisplay, 840, 50);
+  text("Afficher les populations supérieures à " + minDensiteToDisplay, 840, 40);
 }
 
 
@@ -89,8 +89,12 @@ void mouseMoved() {
 void mouseClicked() {
   City tmp = pick(mouseX,mouseY);
   if(tmp != null){
+    if(selectedCity != null)
+      selectedCity.isClicked = false;
     selectedCity = tmp;
+    selectedCity.isClicked = true;
   } else {
+    selectedCity.isClicked = false;
     selectedCity = null;
   }
 }

@@ -16,14 +16,16 @@
 			
 			p{
 				text-align:justify;
+				text-indent:30px;
 			}
 			
 			footer{
 				background:#ccc;
 				bottom:0;
-				height:50px;
+				padding:15px;
 				width:900px;
-				text-align:justify;
+				vertical-align:center;
+				text-align:center;
 			}
 			
 			
@@ -36,18 +38,49 @@
     <body>
     	<div id="main">
 			<h1>NIHM - TP carte de France avec Processing</h1>
-		    <p>Ce Tp a été réalisé par Dimitri Charneux</p>
+			<p>Durant ce tp, nous avons utilisé les données fournies <a href="http://www.cs.toronto.edu/~fchevali/fanny/masterIVI/villes.tsv">ici</a> pour réaliser une carte intéractive de la France. Sur cette carte, nous avons dû représenter les villes grâce à deux de leurs attributs.</p>
+			<h2>Représentation des données</h2>
+		   	<p>Pour ce TP, J'ai décidé d'utiliser la densité de population, ainsi que le nombre d'habitant pour représenter chaque ville. Je me suis inspiré de la carte disponible <a href="http://www.cartesfrance.fr/geographie/cartes-population/carte-densite-population-2009.html">ici</a>. Sur ma carte, les villes sont représentées par des cercles, de tailles et de couleurs différentes, positionnés à leur coordonnées géométrique.</p>
 
-		   	<p>Pour ce TP, J'ai décidé d'utiliser la densité de population, ainsi que le nombre d'habitant des villes. Je me suis inspiré de la carte disponible <a href="http://www.cartesfrance.fr/geographie/cartes-population/carte-densite-population-2009.html">ici</a>. Les villes sont représenté par des cercles de tailles et de couleurs différentes.</p>
+			<p>La taille des cercles varie en fonction du nombres d'habitants d'une ville. Cela semble une bonne manière de représenter une donnée de type quantitative. La taille d'un cercle est au minimum de 3 pixels afin de pouvoir voir les villes ayant le plus faible nombres d'habitants. Ensuite, elle augmente proportionnellement au nombre d'habitant, allant au maximum jusque 103 pixels.</p>
 
-		    <p>J'ai utilisé le site <a href="http://colorbrewer2.org/">suivant</a>, indiqué dans l'énoncé du TP, pour trouver des palettes de couleurs efficaces. J'ai choisi de faire varier la couleur du jaune pour les plus faibles densités de population, au rouge pour les plus fortes.</p> 
-		    <p>La taille des cercles est proportionnelle au nombres d'habitants d'une ville. La taille minimale d'une ville est de 3 pixels afin de pouvoir voir les villes ayant le plus faibles nombres d'habitants. Ensuite, elle augmente proportionnellement au nombre d'habitant de ces villes, allant au maximum jusque 103 pixels.</p>
+		    <p>J'ai utilisé le site <a href="http://colorbrewer2.org/">suivant</a>, indiqué dans l'énoncé du TP, pour trouver des palettes de couleurs efficaces. J'ai choisi de faire varier la couleur en fonction de la densité de population, du jaune pour les plus faibles, au rouge pour les plus fortes.</p> 
 		    <p>Nous obtenons ainsi la carte de France suivante : </p>
 		    
 		    <img src="imageProcessing/carte1.png" alt="carte des densités de population">
+		    <p>Cela nous donne une carte lisible et agréable à l'oeil où l'on identifie clairement les zones ayant une forte densité de population et celles en ayant une plus faible.</p>
 		    
+		    
+		    
+		    
+		    
+		    
+		    <h2>Interaction utilisateur</h2>
+		    <p>Plusieurs interactions utilisateur ont été implémentées durant ce TP. La première consiste à afficher le nom de la ville quand l'utilisateur passe sa souris sur celle-ci. Nous pouvons voir un exemple de cette interaction dans l'image ci-dessous où le pointeur de la souris est sur la ville de Paris.</p>
+		    <img src="imageProcessing/carte4.png" alt="carte avec ville affiché">
+		    
+		    <p>Nous pouvons également modifier le nombre de villes affichées sur la carte. Pour cela, un slider, situé à droite de la carte, permet de les filtrer en fonction de leur nombre total d'habitants. On peut voir le nombre minimum d'habitants sur une zone de texte située au dessus du slider. Nous pouvons voir ce slider à l'oeuvre sur les 2 images ci-dessous où le curseur du slider a été déplacé.</p>
+		    
+		    <table>
+		    	<tr>
+		    		<td><img src="imageProcessing/carte2.png" width="450" alt="carte avec slider 1"></td>
+		    		<td><img src="imageProcessing/carte3.png" width="450" alt="carte avec slider 2"></td>
+		    	</tr>
+		    </table>
+		    
+		    
+		    
+		    <p>Une seconde interaction concerne les villes. Si l'utilisateur clique sur une ville, ses informations sont affichées dans une zone à droite de l'image, sous le slider vu précedemment. La ville est quant à elle affichée en vert. Si l'utilisateur veut enlever ces informations, il n'a qu'à cliquer sur une zone où il n'y a pas de villes. Voici un exemple dans lequel la ville de Paris a été sélectionnée. On peut voir les informations sur la population, la surface ou l'altitude de Paris affichées à droite de la carte.</p>
+		    <img src="imageProcessing/carte5.png" width="900" alt="carte avec ville affiché">
+		    <h2>Instructions</h2>
+		    <p>Pour utiliser cette application, il suffit de télécharger l'archive <a href="https://drive.google.com/open?id=0BzogfLIADeLsTGZJSlFONGNvMlk">ici</a> et de la décompresser. Il suffit alors de lancer l'application <i>processing</i>, d'ouvrir le fichier <i>tpdensite.pde</i> et d'appuyer sur la flèche pour lancer l'application.</p>
+		    <h2>Source</h2>
+		    <p>carte : <a href="http://www.cartesfrance.fr/geographie/cartes-population/carte-densite-population-2009.html">http://www.cartesfrance.fr/geographie/cartes-population/carte-densite-population-2009.html</a></p>
+		    <p>couleur : <a href="http://colorbrewer2.org/">http://colorbrewer2.org/</a></p>
+		    <p>slider : <a href="https://processing.org/examples/scrollbar.html">https://processing.org/examples/scrollbar.html</a></p>
+		    <p>données : <a href="http://www.cs.toronto.edu/~fchevali/fanny/masterIVI/villes.tsv">http://www.cs.toronto.edu/~fchevali/fanny/masterIVI/villes.tsv</a></p>
 		    <footer>
-				<p>Ce Tp a été réalisé par Dimitri Charneux</p>
+				<p>Ce TP a été réalisé par Dimitri Charneux</p>
 			</footer>
     	</div>
 
